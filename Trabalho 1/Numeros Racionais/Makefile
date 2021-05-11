@@ -11,11 +11,12 @@ H_SOURCE=$(wildcard ./source/*.h)
 OBJS=$(subst .c,.o,$(subst source,obj,$(C_SOURCE)))
 
 
-all: $(SRC)\main.c
-	gcc $< $(OBJ)\Racionais.o -o teste -lm
+all: $(SRC)/main.c
+	gcc $< ./$(OBJ)/Racionais.o -o teste -lm
 
-%.o: $(SRC)\%.c $(SRC)\%.h
-	gcc -c $< -o $(OBJ)\$@ -lm
+%.o: ./$(SRC)/%.c ./$(SRC)/%.h
+	gcc -c $< -o ./$(OBJ)/$@ -lm
 
 clean:
-	del $(OBJ)\*.o
+	rm $(OBJ)/*.o
+	rmdir $(OBJ)
