@@ -15,7 +15,7 @@ all: dir main exe
 exe: $(OBJS)
 	gcc $^ -o testes	
 
-%.o: $(SRC)\%.c $(SRC)\%.h
+%.o: ./$(SRC)/%.c ./$(SRC)/%.h
 	gcc -c $< -o ./$(OBJ)/$@ -lm
 
 compila: $(C_SOURCE)
@@ -28,5 +28,6 @@ dir:
 	mkdir $(OBJ)
 
 clean:
-	rm ./$(OBJ)/*.o
+	rm $(OBJ)/*.o
 	rmdir $(OBJ)
+
