@@ -185,8 +185,15 @@ void quadradoRacional (Racional_pt n){
     n->den *= n->den;
 }
 
-void raizquadradaRacional (Racional_pt n, double eps){
-    
+double raizquadradaRacional (Racional_pt n, int i, double chute){ //Para garantir, chute perto da raiz do num e den (pode ser valores distantes tbm)
+    double numeroRacional = racionalParaDouble(n);                //int i = 0;
+    if(i >= 10){
+        return chute;
+    }
+
+    chute = (chute + ((numeroRacional)/chute));
+    i++;
+    raizquadradaRacional(n,i,chute);
 }
 
 double racionalParaDouble (Racional_pt n){
