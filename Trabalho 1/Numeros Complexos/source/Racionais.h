@@ -46,7 +46,7 @@ Racional_pt divideRacionais (Racional_pt a, Racional_pt b);
 
 void quadradoRacional (Racional_pt n);
 
-void raizquadradaRacional (Racional_pt n, double eps);
+double raizquadradaRacional (Racional_pt n, int i, double chute);
 
 double racionalParaDble (Racional_pt n);
 
